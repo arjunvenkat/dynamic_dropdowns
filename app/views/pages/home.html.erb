@@ -1,0 +1,12 @@
+<%= form_for(Message.new) do |f| %>
+  <%= f.label :course_id %>
+  <div>
+    <%= f.collection_select :course_id, Course.all, :id, :name, include_blank: true %>
+  </div>
+  <%= f.label :student_id %>
+  <div>
+    <%= f.grouped_collection_select :student_id, Course.all, :students, :name, :id, :name, include_blank: true %>
+  </div>
+<% end %>
+
+
