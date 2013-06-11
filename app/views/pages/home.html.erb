@@ -10,3 +10,24 @@
 <% end %>
 
 
+<script>
+  $(document).ready(function(){
+    var students = $('#message_student_id').html();
+    console.log(students)
+    $('#message_course_id').change(function(){
+      var selected_course = $('#message_course_id :checked').text();
+      var filtered_students = $(students).filter('optgroup[label="' + selected_course + '"]').html();
+      console.log(filtered_students);
+      $("#message_student_id").html(filtered_students)
+    })
+  });
+</script>
+
+
+
+
+
+
+
+
+
